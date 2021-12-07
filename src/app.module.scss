@@ -1,0 +1,108 @@
+:root{
+  --border-color: var(--light, rgba(0, 0, 0, 0.2)) var(--dark, rgba(255, 255, 255, 0.2));
+}
+
+*{
+  box-sizing: border-box;
+}
+
+html{
+  font-size: var(--font-size-reset);
+  font-family: var(--font-family);
+  line-height: var(--line-height);
+  color: var(--color);
+  background: var(--background);
+  height: 100%;
+  user-select: none;
+}
+
+body{
+  font-size: var(--font-size);
+  height: 100%;
+  margin: 0;
+}
+
+.container{
+  max-width: 34rem;
+  margin: 0 auto;
+  padding: 4.2rem 0;
+}
+
+.buttons{
+  display: flex;
+  justify-content: flex-end;
+}
+
+.cards>*{
+  margin-bottom: 1rem;
+}
+
+.options{
+  margin: 2rem 0;
+  padding: 0 1rem;
+}
+
+.option{
+  display: flex;
+  align-items: center;
+  padding: 1rem 0;
+}
+
+.option:not(:last-child){
+  border-bottom: .1rem solid var(--border-color);
+}
+
+.option-check{
+  visibility: hidden;
+  display: flex;
+  font-size: 2.4rem;
+}
+
+.option-check-show{
+  visibility: visible;
+}
+
+input[type=radio]{
+  display: none;
+}
+
+.option label{
+  margin-left: 1rem;
+  width: 100%;
+}
+
+button{
+  width: auto;
+  font-size: var(--font-size);
+  color: var(--color);
+  background: transparent;
+  border: 0;
+  margin: 0;
+  padding: 0;
+  border: .2rem solid transparent;
+  display: flex;
+}
+
+[tabindex]{
+  border: .1rem solid transparent;
+  cursor: pointer;
+}
+
+button:active,
+button:focus,
+[tabindex]:active,
+[tabindex]:focus{
+  outline: none;
+  // border-color: var(--border-color); Need this for a11y leaving out for better XD
+}
+
+.app{
+  transform: translateZ(0);
+  transition: transform 300ms, filter 200ms, opacity 200ms;
+}
+
+.blurred{
+  filter: blur(.1rem);
+  transform: scale(.9);
+  opacity: 0.5;
+}

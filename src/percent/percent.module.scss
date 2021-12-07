@@ -1,0 +1,140 @@
+:root{
+  --range-background: var(--light, rgba(0, 0, 0, 0.2)) var(--dark, rgba(255, 255, 255, 0.2));
+}
+
+.range{
+  display: flex;
+  padding: 3rem .5rem 1rem .5rem;
+}
+
+.row{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 2.4rem;
+  width: 100%;
+}
+
+.range input[type=range]{
+  flex: 1 0 0;
+  min-width: 0; // they can be 0 size
+  margin: 0;
+  padding: 0;
+}
+
+.kw{
+  font-size: 1.4rem;
+}
+
+input[type=range]::-webkit-slider-thumb {
+  margin: 0;
+  padding: 0;
+}
+
+input[type=range] {
+  -webkit-appearance: none;
+  background: transparent;
+  z-index: 1;
+}
+
+input[type=range]:focus {
+ outline: none;
+}
+
+input[type=range]:first-child::-webkit-slider-runnable-track{
+  border-top-left-radius: 10rem;
+  border-bottom-left-radius: 10rem;
+}
+
+input[type=range]:last-child::-webkit-slider-runnable-track{
+  border-top-right-radius: 10rem;
+  border-bottom-right-radius: 10rem;
+}
+
+input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  height: 3.3rem;
+  width: 3.3rem;
+  border-radius: 50%;
+  background: var(--color);
+  box-shadow: none;
+  margin-top: calc((3.3rem - 2rem) / 2 * -1);
+}
+
+input[type=range]::-webkit-slider-runnable-track  {
+  -webkit-appearance: none;
+  box-shadow: none;
+  border: none;
+  background: var(--range-background);
+  height: 2rem;
+}
+
+.gauge{
+  width: 20rem;
+  padding: 3rem 0;
+  position: relative;
+}
+
+.percent{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  font-size: 6.4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.percent span{
+  font-size: 3rem;
+  margin-right: -1.5rem;
+}
+
+.gauge svg{
+  position: relative;
+  display: block;
+}
+
+.gauge circle{
+  stroke-width: 10;
+}
+
+.rail{
+  fill: transparent;
+  stroke: var(--range-background);
+}
+
+.progress{
+  fill: transparent;
+  stroke-linecap: round;
+  stroke: var(--green);
+  transition: stroke-dashoffset 500ms;
+}
+
+.rel{
+  position: relative;
+  padding-top: 4rem;
+  align-items: baseline;
+}
+
+.cursor{
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  margin-left: 2rem;
+  z-index: 0;
+}
+
+.cursor:after{
+  content: '';
+  display: block;
+  height: 6rem;
+  width: .3rem;
+  border-radius: .6rem;
+  background: var(--green);
+  position: relative;
+  top: 100%;
+  left: 2rem;
+}

@@ -1,0 +1,41 @@
+:root{
+  --ON: initial;
+  --OFF: ;
+}
+
+.theme-default,
+.theme-dark {
+  --light: var(--OFF);
+  --dark: var(--ON);
+}
+
+.theme-light {
+  --light: var(--ON);
+  --dark: var(--OFF);
+}
+
+@media (prefers-color-scheme: light) {
+  .theme-default {
+    --light: var(--ON);
+    --dark: var(--OFF);
+  }
+}
+
+:root{
+  --font-size-reset: .625em;
+  --font-size: 1.8rem;
+  --font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji";
+  --line-height: 1.5;
+
+  --blue: #0157FF;
+  --navy: #18007A;
+  --green: #00D900;
+  --lime: #CBFF01;
+  --light-grey: #F1F1F1;
+  --white: #fff;
+  --black: #fff;
+
+  --color: var(--light, #000) var(--dark, #fff);
+  --background: var(--light, #F1F1F1) var(--dark, #0157FF);
+
+}

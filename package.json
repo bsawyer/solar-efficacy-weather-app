@@ -1,0 +1,39 @@
+{
+  "name": "solar-efficacy-weather-app",
+  "version": "1.0.0",
+  "private": true,
+  "description": "The purpose of this Web App is to provide the user with the predicted power generation of a single household PV system based on the users location and current weather.",
+  "type": "module",
+  "source": "src/index.html",
+  "targets": {
+    "default": {
+      "distDir": "./public"
+    }
+  },
+  "scripts": {
+    "start": "parcel",
+    "build": "parcel build",
+    "lint": "eslint --ext ts,tsx src"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@parcel/transformer-sass": "^2.0.1",
+    "@types/react": "^17.0.37",
+    "@types/react-dom": "^17.0.11",
+    "@typescript-eslint/eslint-plugin": "^5.5.0",
+    "@typescript-eslint/parser": "^5.5.0",
+    "brain.js": "^2.0.0-beta.4",
+    "csv-parse": "^5.0.3",
+    "eslint": "^8.4.0",
+    "eslint-plugin-react": "^7.27.1",
+    "parcel": "^2.0.1",
+    "typescript": "^4.5.2"
+  },
+  "dependencies": {
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-icons": "^4.3.1"
+  }
+}

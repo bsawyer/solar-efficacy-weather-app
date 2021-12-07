@@ -1,0 +1,27 @@
+.weather-current{
+  display: flex;
+  justify-content: space-between;
+  font-size: 2.4rem;
+  align-items: center;
+  width: 100%;
+}
+
+.temp{
+  font-size: 3rem;
+}
+
+.place{
+  padding: 0 1rem;
+}
+
+.condition{
+  font-size: 3.2rem;
+  display: flex;
+}
+
+.get{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+}

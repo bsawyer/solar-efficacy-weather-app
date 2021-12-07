@@ -1,0 +1,50 @@
+:root{
+  --card-background: var(--light, #fff) var(--dark, rgba(255, 255, 255, 0.2));
+  --card-border-radius: 2rem;
+}
+
+.card{
+  background: var(--card-background);
+  border-radius: var(--card-border-radius);
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.card-content{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.card-placeholder{
+  animation: pulse 3s infinite;
+}
+
+.card-button{
+  display: inline-flex;
+  padding: 1.4rem;
+  font-size: 3rem;
+}
+
+.card-vertical .card-content{
+  flex-direction: column;
+  align-items: center;
+}
+
+.card-placeholder .card-content{
+  visibility: hidden;
+}
+
+@keyframes pulse {
+  0%{
+    background: var(--light, #fff) var(--dark, rgba(#ffffff, 0.2));
+  }
+  50%{
+    background: var(--light, rgba(#ffffff, 0.05)) var(--dark, rgba(#ffffff, 0.05));
+  }
+  100%{
+    background: var(--light, #fff) var(--dark, rgba(#ffffff, 0.2));
+  }
+}
