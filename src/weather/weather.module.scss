@@ -25,3 +25,42 @@
   align-items: center;
   margin: 0 auto;
 }
+
+.data-row{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  justify-content: center;
+  width: 100%;
+  padding: 1rem 0;
+  align-items: center;
+  grid-column-gap: 3rem;
+}
+
+.data-row-current{
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  align-items: center;
+  padding: 1rem 0;
+}
+
+.bar{
+  background: var(--background);
+  width: 7rem;
+  height: .5rem;
+  border-radius: 3rem;
+  position: relative;
+}
+
+.bar-percent{
+  background: var(--green);
+  height: .5rem;
+  position: absolute;
+  left: 0;
+  top: 0;
+  border-radius: 3rem;
+}
+
+.center{
+  text-align: center;
+}

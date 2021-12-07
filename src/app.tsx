@@ -6,19 +6,9 @@ import {CurrentWeather, WeatherContext} from './weather';
 import {Percent, PercentContext} from './percent';
 import {Card} from './card';
 import {BsThreeDots, BsCheck} from 'react-icons/bs';
-import {NeuralNetwork} from 'brain.js';
-import netData from './net.json';
-
-const net = new NeuralNetwork();
-net.fromJSON(netData);
-
-function calcPercent(val, min, max){
-  return (val + (-1 * min)) / (max + (-1 * min));
-}
-
-function fahrenheitToCelsius(f){
-  return (f - 32) * 5 / 9;
-}
+// import {NeuralNetwork} from 'brain.js';
+// import netData from './net.json';
+import {net, mmToInches, predictDaily} from './util';
 
 export function App() {
   const {theme, setTheme} = useContext(ThemeContext);
@@ -40,14 +30,8 @@ export function App() {
   };
   useEffect(() => {
     if(weather){
-      setPercent((
-        net.run({
-          temp: calcPercent(weather.data.daily[0].temp.day, -128.6, 134), // need to handle metric
-          cloudcover: weather.data.daily[0].clouds / 100,
-          precip: calcPercent(weather.data.daily[0].rain, 0, 14), // metric
-          wspd: calcPercent(weather.data.daily[0].wind_speed, 0, 254), //metric
-          humidity: weather.data.daily[0].humidity / 100,
-        }).generatedkW * 100).toFixed()
+      setPercent(
+        predictDaily(weather.data.daily[0])
       )
     }
   }, [weather]);

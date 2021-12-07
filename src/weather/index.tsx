@@ -12,6 +12,7 @@ import {
   BsFillCloudFill,
   BsFillCloudSunFill
 } from 'react-icons/bs';
+import {mmToInches, predictDaily} from '../util';
 
 const API_KEY = '1b9adabfb86397e460dd5c776518ee51';
 
@@ -116,7 +117,7 @@ export const WeatherContextProvider = ({children}: Props) => {
 };
 
 export const CurrentWeather = () => {
-  const {location, weather, setLocation} = useContext(WeatherContext);
+  const {location, weather, units, setLocation} = useContext(WeatherContext);
   const [loading, setLoading] = useState(false);
   const handleClick = () => {
     setLoading(true);
@@ -155,18 +156,48 @@ export const CurrentWeather = () => {
         </div>
       </Card>
     </div>
-    <Card placeholder={loading}>
-      {weather ? (
-        <>
-        <div className={styles['data-row']}>
-          <div>Temp</div><div>{weather.current.temp}</div>
+    {weather && (
+      <Card vertical>
+        <div className={styles['data-row-current']}>
+          <div>Temperature</div>
+          <div>{weather.current.main.temp}°{units === 'metric' ? 'C' : 'F'}</div>
         </div>
-        </>
-      ) : (
-        <div className={styles.loading}>
+        <div className={styles['data-row-current']}>
+          <div>Humidity</div>
+          <div>{weather.current.main.humidity}%</div>
         </div>
+        <div className={styles['data-row-current']}>
+          <div>Clouds</div>
+          <div>{weather.current.clouds.all}%</div>
+        </div>
+        <div className={styles['data-row-current']}>
+          <div>Wind</div>
+          <div>{weather.current.wind.speed} {units === 'metric' ? 'm/s' : 'mph'}</div>
+        </div>
+        <div className={styles['data-row-current']}>
+          <div>Rain</div>
+          <div>{units === 'metric' ? (weather.current.rain['1h'] || 0) + ' mm' : mmToInches(weather.current.rain['1h'] || 0) + ' in'}</div>
+        </div>
+        </Card>
       )}
-    </Card>
+      {weather && (
+        <Card vertical>
+          {weather.data.daily.map((data,i)=> {
+            const Icon = WEATHER_CONDITIONS[getIconIndex(data.weather[0].id)];
+            const p = predictDaily(data);
+            return (
+              <div key={i} className={`${styles['data-row']}`}>
+                  <div>{new Date(data.dt * 1000).toLocaleString('en-us', {weekday: 'short'})}</div>
+                  <Icon />
+                  <div className={styles.bar}>
+                    <div className={styles['bar-percent']} style={{width: `${p}%`}}></div>
+                  </div>
+                  <div className={styles.center}>{p} %</div>
+              </div>
+            )
+          })}
+          </Card>
+        )}
     </>
   );
 };
