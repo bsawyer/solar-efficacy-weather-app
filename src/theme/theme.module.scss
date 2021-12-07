@@ -36,9 +36,12 @@
   --black: #000000;
 
   --color: var(--light, #000000) var(--dark, #ffffff);
-  --background: var(--light, #F1F1F1) var(--dark, #0056FF);
+  --background: var(--light, #F1F1F1) var(--dark, #003ec7);
 
-  --theme-color: var(--light, #0157FF) var(--dark, #CBFF01);
+  --theme-color: var(--light, #3aeb16) var(--dark, #3aeb16);
   --theme-layer-background: var(--light, rgba(0, 0, 0, 0.14)) var(--dark, rgba(255, 255, 255, 0.2));
+
+  --drawer-background: var(--light, #ffffff) var(--dark, #3365D2);
+  --drawer-color: var(--light, #000000) var(--dark, #ffffff);
 
 }
