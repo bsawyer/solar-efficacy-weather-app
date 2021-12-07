@@ -99,7 +99,7 @@ export const Percent = () => {
       </div>
       <div className={`${styles.row} ${styles.rel}`}>
         <div className={styles.cursor} style={{transform: `translateX(${(values[1] / 2 + values[0] / 2) / 7 * 100 }%)`}}>
-          {formatkW(predictedOutput)}
+          {formatkW(predictedOutput)}<span className={styles.kw}>kW</span>
         </div>
         <BsFillCloudFill />
         <div onMouseDown={updateRanges} onInput={updateRanges} className={styles.range}>

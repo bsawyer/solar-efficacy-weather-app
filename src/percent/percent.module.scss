@@ -1,5 +1,7 @@
 :root{
   --range-background: var(--light, rgba(0, 0, 0, 0.2)) var(--dark, rgba(255, 255, 255, 0.2));
+  --thumb-size: 4rem;
+  --track-size: 2rem;
 }
 
 .range{
@@ -53,12 +55,12 @@ input[type=range]:last-child::-webkit-slider-runnable-track{
 
 input[type=range]::-webkit-slider-thumb {
   -webkit-appearance: none;
-  height: 3.3rem;
-  width: 3.3rem;
+  height: var(--thumb-size);
+  width: var(--thumb-size);
   border-radius: 50%;
   background: var(--color);
   box-shadow: none;
-  margin-top: calc((3.3rem - 2rem) / 2 * -1);
+  margin-top: calc((var(--thumb-size) - var(--track-size)) / 2 * -1);
 }
 
 input[type=range]::-webkit-slider-runnable-track  {
@@ -66,7 +68,7 @@ input[type=range]::-webkit-slider-runnable-track  {
   box-shadow: none;
   border: none;
   background: var(--range-background);
-  height: 2rem;
+  height: var(--track-size);
 }
 
 .gauge{
@@ -126,6 +128,7 @@ input[type=range]::-webkit-slider-runnable-track  {
   width: 100%;
   margin-left: 2rem;
   z-index: 0;
+  text-indent: -1rem;
 }
 
 .cursor:after{
