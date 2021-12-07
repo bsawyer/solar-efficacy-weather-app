@@ -41,6 +41,10 @@ function formatkW(number){
   return (Math.round(number * 100) / 100).toFixed(2);
 }
 
+function capFlexGrow(grow){
+  return Math.min(Math.max(grow, 3), 17);
+}
+
 export const Percent = () => {
   const {percent} = useContext(PercentContext);
 
@@ -68,7 +72,7 @@ export const Percent = () => {
     }
 
     if(offset != null){
-    	setMove(offset);
+    	setMove(Math.min(Math.max(offset, 1), max - 2));
     }
     setValues([
       5 * minRange.current.valueAsNumber / max,
@@ -103,8 +107,8 @@ export const Percent = () => {
         </div>
         <BsFillCloudFill />
         <div onMouseDown={updateRanges} onInput={updateRanges} className={styles.range}>
-          <input ref={minRange} type="range" min={min} max={move} step="1" id="min" defaultValue={min} style={{flexGrow: Math.min(Math.max(move + 1, 4), 17)}}/>
-          <input ref={maxRange} type="range" min={move + 1} max={max} step="1" id="max"  defaultValue={max} style={{flexGrow: Math.max(Math.min(17, max - (move + 1) + 1), 2)}}/>
+          <input ref={minRange} type="range" min={min} max={move} step="1" id="min" defaultValue={min} style={{flexGrow: capFlexGrow(move + 1)}}/>
+          <input ref={maxRange} type="range" min={move + 1} max={max} step="1" id="max"  defaultValue={max} style={{flexGrow: capFlexGrow(max - (move + 1) + 1)}}/>
         </div>
         <BsFillSunFill />
       </div>
