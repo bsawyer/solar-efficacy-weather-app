@@ -1,9 +1,11 @@
 :root{
-  --drawer-background: var(--light, #fff) var(--dark, #3479FF);
-  --drawer-color: var(--light, #000) var(--dark, #fff);
+  --drawer-background: var(--light, #ffffff) var(--dark, #3378FF);
+  --drawer-color: var(--light, #000000) var(--dark, #ffffff);
 }
 
 .drawer{
+  display: flex;
+  flex-direction: column;
   border-top-left-radius: 2rem;
   border-top-right-radius: 2rem;
   height: 90vh;
@@ -29,6 +31,7 @@
   z-index: -1;
   transform: translateY(30%);
   opacity: 0;
+  transition: none;
 }
 
 .close{
@@ -37,12 +40,18 @@
   font-size: 3rem;
 }
 
+.content{
+  overflow: auto;
+  flex: 1;
+}
+
 @media (min-width: 420px) {
   .drawer{
     width: 34rem;
+    height: fit-content;
+    max-height: 98vh;
     left: 50%;
     top: 50%;
-    height: auto;
     border-radius: 2rem;
   }
 

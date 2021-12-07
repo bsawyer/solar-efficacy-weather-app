@@ -32,10 +32,13 @@
   --green: #00D900;
   --lime: #CBFF01;
   --light-grey: #F1F1F1;
-  --white: #fff;
-  --black: #fff;
+  --white: #ffffff;
+  --black: #000000;
 
-  --color: var(--light, #000) var(--dark, #fff);
-  --background: var(--light, #F1F1F1) var(--dark, #0157FF);
+  --color: var(--light, #000000) var(--dark, #ffffff);
+  --background: var(--light, #F1F1F1) var(--dark, #0056FF);
+
+  --theme-color: var(--light, #0157FF) var(--dark, #CBFF01);
+  --theme-layer-background: var(--light, rgba(0, 0, 0, 0.14)) var(--dark, rgba(255, 255, 255, 0.2));
 
 }

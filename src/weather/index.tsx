@@ -192,7 +192,7 @@ export const CurrentWeather = () => {
                   <div className={styles.bar}>
                     <div className={styles['bar-percent']} style={{width: `${p}%`}}></div>
                   </div>
-                  <div className={styles.center}>{p} %</div>
+                  <div className={styles.center}>{p}%</div>
               </div>
             )
           })}

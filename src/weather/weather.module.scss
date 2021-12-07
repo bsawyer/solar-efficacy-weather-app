@@ -12,6 +12,7 @@
 
 .place{
   padding: 0 1rem;
+  text-align: center;
 }
 
 .condition{
@@ -45,7 +46,7 @@
 }
 
 .bar{
-  background: var(--background);
+  background: var(--theme-layer-background);
   width: 7rem;
   height: .5rem;
   border-radius: 3rem;
@@ -53,7 +54,7 @@
 }
 
 .bar-percent{
-  background: var(--green);
+  background: var(--theme-color);
   height: .5rem;
   position: absolute;
   left: 0;

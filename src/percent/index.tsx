@@ -6,6 +6,7 @@ import {
   BsFillSunFill,
   BsFillCloudFill
 } from 'react-icons/bs';
+import {calcPercent} from '../util';
 
 interface Props {
   children: React.children;
@@ -18,7 +19,7 @@ export const PercentContext = createContext({
 
 export const PercentContextProvider = ({children}: Props) => {
   const setPercent = percent => {
-    localStorage.setItem('percent', percent)
+    localStorage.setItem('percent', percent);
     setState({
       ...state,
       percent
@@ -74,10 +75,11 @@ export const Percent = () => {
     if(offset != null){
     	setMove(Math.min(Math.max(offset, 1), max - 2));
     }
+
     setValues([
       5 * minRange.current.valueAsNumber / max,
       5 * maxRange.current.valueAsNumber / max
-    ])
+    ]);
   };
 
   const predictedOutput = (values[1] - values[0]) * (percent / 100) + values[0];
@@ -102,7 +104,7 @@ export const Percent = () => {
         <div className={styles.percent}>{percent}<span>%</span></div>
       </div>
       <div className={`${styles.row} ${styles.rel}`}>
-        <div className={styles.cursor} style={{transform: `translateX(${(values[1] / 2 + values[0] / 2) / 7 * 100 }%)`}}>
+        <div className={styles.cursor} style={{transform: `translateX(${calcPercent(predictedOutput, 0, max / 4) * 76 - 38}% )`}}>
           {formatkW(predictedOutput)}<span className={styles.kw}>kW</span>
         </div>
         <BsFillCloudFill />

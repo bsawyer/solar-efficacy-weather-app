@@ -50,7 +50,9 @@ export const Drawer = ({children}: Props) => {
   return (
     <div ref={drawerRef} className={`${styles.drawer} ${open ? styles['drawer-open'] : styles['drawer-close']}`}>
       <div className={styles.close} tabIndex="0" onClick={() => { setOpen(false) }}><BsX /></div>
-      {children}
+      <div className={styles.content}>
+        {children}
+      </div>
     </div>
   );
 };

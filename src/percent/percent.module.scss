@@ -1,10 +1,10 @@
 :root{
-  --range-background: var(--light, rgba(0, 0, 0, 0.2)) var(--dark, rgba(255, 255, 255, 0.2));
   --thumb-size: 3rem;
   --track-size: 2rem;
 }
 
 .range{
+  width: 100%;
   display: flex;
   padding: 3rem .5rem 1rem .5rem;
 }
@@ -15,6 +15,35 @@
   align-items: center;
   font-size: 2.4rem;
   width: 100%;
+}
+
+.rel{
+  width: 100%;
+  position: relative;
+  padding-top: 3rem;
+  align-items: baseline;
+  overflow: hidden;
+}
+
+.cursor{
+  position: absolute;
+  left: 50%;
+  top: 0;
+  width: 100%;
+  z-index: 0;
+  text-indent: -3.5rem;
+}
+
+.cursor:after{
+  content: '';
+  display: block;
+  height: 6rem;
+  width: .3rem;
+  border-radius: .6rem;
+  background: var(--theme-color);
+  position: relative;
+  top: 100%;
+  left: -.15rem;
 }
 
 .range input[type=range]{
@@ -67,7 +96,7 @@ input[type=range]::-webkit-slider-runnable-track  {
   -webkit-appearance: none;
   box-shadow: none;
   border: none;
-  background: var(--range-background);
+  background: var(--theme-layer-background);
   height: var(--track-size);
 }
 
@@ -104,41 +133,12 @@ input[type=range]::-webkit-slider-runnable-track  {
 
 .rail{
   fill: transparent;
-  stroke: var(--range-background);
+  stroke: var(--theme-layer-background);
 }
 
 .progress{
   fill: transparent;
   stroke-linecap: round;
-  stroke: var(--green);
+  stroke: var(--theme-color);
   transition: stroke-dashoffset 500ms;
-}
-
-.rel{
-  position: relative;
-  padding-top: 4rem;
-  align-items: baseline;
-  overflow: hidden;
-}
-
-.cursor{
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 100%;
-  margin-left: 2rem;
-  z-index: 0;
-  text-indent: -1rem;
-}
-
-.cursor:after{
-  content: '';
-  display: block;
-  height: 6rem;
-  width: .3rem;
-  border-radius: .6rem;
-  background: var(--green);
-  position: relative;
-  top: 100%;
-  left: 2rem;
 }
