@@ -12,7 +12,7 @@ interface Props {
 }
 
 export const PercentContext = createContext({
-  percent: 50,
+  percent: 0,
   setPercent: () => {}
 });
 
@@ -26,7 +26,7 @@ export const PercentContextProvider = ({children}: Props) => {
   };
 
   const [state, setState] = useState({
-    percent: JSON.parse(localStorage.getItem('percent')) || 50,
+    percent: JSON.parse(localStorage.getItem('percent')) || 0,
     setPercent
   });
 
