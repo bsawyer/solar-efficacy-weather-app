@@ -176,7 +176,7 @@ export const CurrentWeather = () => {
         </div>
         <div className={styles['data-row-current']}>
           <div>Rain</div>
-          <div>{units === 'metric' ? (weather.current.rain['1h'] || 0) + ' mm' : mmToInches(weather.current.rain['1h'] || 0) + ' in'}</div>
+          <div>{units === 'metric' ? (weather.current?.rain?.['1h'] || 0) + ' mm' : mmToInches(weather.current?.rain?.['1h'] || 0) + ' in'}</div>
         </div>
         </Card>
       )}

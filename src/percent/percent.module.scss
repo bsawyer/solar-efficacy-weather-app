@@ -116,6 +116,7 @@ input[type=range]::-webkit-slider-runnable-track  {
   position: relative;
   padding-top: 4rem;
   align-items: baseline;
+  overflow: hidden;
 }
 
 .cursor{

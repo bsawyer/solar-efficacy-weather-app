@@ -103,8 +103,8 @@ export const Percent = () => {
         </div>
         <BsFillCloudFill />
         <div onMouseDown={updateRanges} onInput={updateRanges} className={styles.range}>
-          <input ref={minRange} type="range" min={min} max={move} step="1" id="min" defaultValue={min} style={{flexGrow: move + 1}}/>
-          <input ref={maxRange} type="range" min={move + 1} max={max} step="1" id="max"  defaultValue={max} style={{flexGrow: max - (move + 1) + 1}}/>
+          <input ref={minRange} type="range" min={min} max={move} step="1" id="min" defaultValue={min} style={{flexGrow: Math.max(move + 1, 3)}}/>
+          <input ref={maxRange} type="range" min={move + 1} max={max} step="1" id="max"  defaultValue={max} style={{flexGrow: Math.min(18, max - (move + 1) + 1)}}/>
         </div>
         <BsFillSunFill />
       </div>
