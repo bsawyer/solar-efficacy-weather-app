@@ -1,0 +1,55 @@
+.container{
+  min-height: 34rem;
+  position: relative;
+}
+
+.container>svg{
+  position: absolute;
+  left: 1rem;
+  top: 2rem;
+  z-index: 1;
+  font-size: 2rem;
+  opacity: .5;
+}
+
+.input{
+  min-width: auto;
+  width: 100%;
+  line-height: 3rem;
+  border: 0;
+  border-radius: 1rem;
+  background: var(--theme-layer-background);
+  color: var(--color);
+  font-size: var(--font-size);
+  padding: .5rem 1rem .5rem 4rem;
+  margin: 1rem 0;
+}
+
+.input:focus,
+.input:active{
+  outline: none;
+  border: 0;
+}
+
+::placeholder{
+  color: var(--color);
+  font-size: var(--font-size);
+  opacity: .5;
+}
+
+.list{
+  padding: 0 1rem;
+}
+
+.item{
+  padding: 1rem 0;
+}
+
+.item>svg{
+  margin-right: 1rem;
+  vertical-align: text-top;
+}
+
+.item:not(:last-child){
+  border-bottom: .1rem solid var(--theme-layer-background);
+}

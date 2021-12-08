@@ -12,9 +12,7 @@ import {
   BsFillCloudFill,
   BsFillCloudSunFill
 } from 'react-icons/bs';
-import {mmToInches, predictDaily} from '../util';
-
-const API_KEY = '1b9adabfb86397e460dd5c776518ee51';
+import {mmToInches, predictDaily, API_KEY} from '../util';
 
 const WEATHER_CONDITIONS = [
   BsFillCloudLightningFill, // 2

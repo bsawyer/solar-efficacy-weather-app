@@ -31,7 +31,7 @@ body{
 
 .buttons{
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
 }
 
 .cards>*{
@@ -104,6 +104,6 @@ button:focus,
 
 .blurred{
   filter: blur(.1rem);
-  transform: scale(.9);
+  transform: scale(.95);
   opacity: 0.5;
 }

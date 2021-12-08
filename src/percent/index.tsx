@@ -27,7 +27,7 @@ export const PercentContextProvider = ({children}: Props) => {
   };
 
   const [state, setState] = useState({
-    percent: JSON.parse(localStorage.getItem('percent')) || 0,
+    percent: 0,
     setPercent
   });
 

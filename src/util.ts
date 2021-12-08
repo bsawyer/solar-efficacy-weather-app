@@ -27,3 +27,5 @@ export function fahrenheitToCelsius(f){
 export function calcPercent(val, min, max){
   return (val + (-1 * min)) / (max + (-1 * min));
 }
+
+export const API_KEY = '1b9adabfb86397e460dd5c776518ee51';

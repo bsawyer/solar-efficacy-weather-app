@@ -3,8 +3,9 @@ import * as styles from './card.module.scss';
 
 interface Props {
   children: React.children;
-  placeholder: Boolean;
-  button: Boolean;
+  placeholder?: Boolean;
+  button?: Boolean;
+  vertical?: Boolean;
 }
 
 export const Card = ({
