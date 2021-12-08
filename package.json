@@ -11,16 +11,22 @@
       "publicUrl": "./"
     }
   },
+  "jest": {
+    "preset": "ts-jest",
+    "testEnvironment": "node"
+  },
   "scripts": {
     "start": "parcel",
     "build": "parcel build",
-    "lint": "eslint --ext ts,tsx src"
+    "lint": "eslint --ext ts,tsx src",
+    "test": "jest"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "@parcel/transformer-sass": "^2.0.1",
+    "@types/jest": "^27.0.3",
     "@types/react": "^17.0.37",
     "@types/react-dom": "^17.0.11",
     "@typescript-eslint/eslint-plugin": "^5.5.0",
@@ -29,7 +35,9 @@
     "csv-parse": "^5.0.3",
     "eslint": "^8.4.0",
     "eslint-plugin-react": "^7.27.1",
+    "jest": "^27.4.3",
     "parcel": "^2.0.1",
+    "ts-jest": "^27.1.1",
     "typescript": "^4.5.2"
   },
   "dependencies": {

@@ -2,6 +2,7 @@ import {NeuralNetwork} from 'brain.js';
 import netData from './net.json';
 
 export const net = new NeuralNetwork();
+// @ts-ignore
 net.fromJSON(netData);
 
 export function predictDaily(data){
@@ -12,6 +13,7 @@ export function predictDaily(data){
       precip: calcPercent(mmToInches(data.rain || 0), 0, 14), // metric
       wspd: calcPercent(data.wind_speed, 0, 254), //metric
       humidity: data.humidity / 100,
+      // @ts-ignore
     }).generatedkW * 100
   ).toFixed();
 }
