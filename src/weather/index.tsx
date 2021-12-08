@@ -183,9 +183,10 @@ export const CurrentWeather = () => {
           {weather.data.daily.map((data,i)=> {
             const Icon = WEATHER_CONDITIONS[getIconIndex(data.weather[0].id)];
             const p = predictDaily(data);
+            const dataDate = new Date(data.dt * 1000);
             return (
               <div key={i} className={`${styles['data-row']}`}>
-                  <div>{new Date(data.dt * 1000).toLocaleString('en-us', {weekday: 'short'})}</div>
+                  <div>{i === 0 ? 'Today' : dataDate.toLocaleString('en-us', {weekday: 'short'})}</div>
                   <Icon />
                   <div className={styles.bar}>
                     <div className={styles['bar-percent']} style={{width: `${p}%`}}></div>

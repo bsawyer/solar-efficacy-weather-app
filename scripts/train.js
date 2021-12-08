@@ -26,10 +26,10 @@ function calcPercent(val, min, max){
 
 fs.createReadStream('./data/pv.csv')
   .pipe(parse())
-  .on('data', function(csvrow) {
+  .on('data', (csvrow)=>{
       csvData.push(csvrow);
   })
-  .on('end',function() {
+  .on('end',()=>{
     let minGeneratedkW = 100; // arbitrary high number
     let maxGeneratedkW = 0;
     const d = csvData.slice(2)
@@ -99,6 +99,7 @@ fs.createReadStream('./data/pv.csv')
         }
       }), {iterations: 80000});
       console.log(results)
+      console.log({minGeneratedkW, maxGeneratedkW})
       fs.writeFileSync('./src/net.json', JSON.stringify(net));
       console.log(net.run(d[0]), d[0].generatedkW)
       console.log(net.run(d[90]), d[90].generatedkW)
